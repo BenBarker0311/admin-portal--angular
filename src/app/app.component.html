@@ -1,0 +1,364 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 8px;
+  }
+
+  .toolbar #youtube-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover,
+  .toolbar #youtube-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .card svg.material-icons path {
+    fill: #888;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    all: unset;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+
+  .card-container .card:not(.highlight-card) {
+    cursor: pointer;
+  }
+
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+
+  .card-container .card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+
+  .card.highlight-card {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+  }
+
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+
+  svg#rocket {
+    width: 80px;
+    position: absolute;
+    left: -10px;
+    top: -24px;
+  }
+
+  svg#rocket-smoke {
+    height: calc(100vh - 95px);
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    z-index: -10;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+  .terminal {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 6px;
+    padding-top: 45px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+  }
+
+  .terminal::before {
+    content: "\2022 \2022 \2022";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(58, 58, 58);
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 0;
+    padding: 14px 0;
+    text-indent: 4px;
+  }
+
+  .terminal pre {
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+  }
+
+  .circle-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 1s ease-out;
+  }
+
+  .circle-link:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+
+  footer a {
+    display: flex;
+    align-items: center;
+  }
+
+  .github-star-badge {
+    color: #24292e;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 3px 10px;
+    border: 1px solid rgba(27, 31, 35, .2);
+    border-radius: 3px;
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+    margin-left: 4px;
+    font-weight: 600;
+  }
+
+  .github-star-badge:hover {
+    background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+    border-color: rgba(27, 31, 35, .35);
+    background-position: -.5em;
+  }
+
+  .github-star-badge .material-icons {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    .card-container>*:not(.circle-link),
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+
+<!-- <mat-toolbar color="primary" class="app-header">
+  <div><a href="#" target="_blank" class="positronx">Demo</a></div>
+  <span class="nav-tool-items">
+    <a mat-button routerLink="signin" routerLinkActive="active">Signin</a>
+    <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Signup</a>
+  </span>
+</mat-toolbar> -->
+
+<!-- toolbar -->
+
+<div class="_toolbar m-0" *ngIf="currentUser">
+  <app-logo></app-logo>
+  <div class="account">
+    <div class="_dropdown">
+      <button class="btn btn-menu">
+        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10.3334 12.6667C15.856 12.6667 20.3334 14.7561 20.3334 17.3334V20.6667H0.333374V17.3334C0.333374 14.7561 4.81071 12.6667 10.3334 12.6667ZM19 17.3334C19 15.4934 15.12 14.0001 10.3334 14.0001C5.54671 14.0001 1.66671 15.4934 1.66671 17.3334V19.3334H19V17.3334ZM10.3334 0.666748C11.5711 0.666748 12.758 1.15841 13.6332 2.03358C14.5084 2.90875 15 4.09574 15 5.33342C15 6.57109 14.5084 7.75808 13.6332 8.63325C12.758 9.50842 11.5711 10.0001 10.3334 10.0001C9.0957 10.0001 7.90871 9.50842 7.03354 8.63325C6.15837 7.75808 5.66671 6.57109 5.66671 5.33342C5.66671 4.09574 6.15837 2.90875 7.03354 2.03358C7.90871 1.15841 9.0957 0.666748 10.3334 0.666748ZM10.3334 2.00008C9.44932 2.00008 8.60147 2.35127 7.97635 2.97639C7.35123 3.60151 7.00004 4.44936 7.00004 5.33342C7.00004 6.21747 7.35123 7.06532 7.97635 7.69044C8.60147 8.31556 9.44932 8.66675 10.3334 8.66675C11.2174 8.66675 12.0653 8.31556 12.6904 7.69044C13.3155 7.06532 13.6667 6.21747 13.6667 5.33342C13.6667 4.44936 13.3155 3.60151 12.6904 2.97639C12.0653 2.35127 11.2174 2.00008 10.3334 2.00008Z"
+            fill="white" fill-opacity="0.6" />
+        </svg>
+        <span>
+          {{currentUser.firstName + " " + currentUser.lastName}}
+        </span>
+      </button>
+      <div class="_dropdown-content">
+        <div class="top-menu-item">
+          <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M7.00004 14.1666C6.55801 14.1666 6.13409 13.991 5.82153 13.6784C5.50897 13.3659 5.33337 12.9419 5.33337 12.4999C5.33337 11.5749 6.07504 10.8333 7.00004 10.8333C7.44207 10.8333 7.86599 11.0088 8.17855 11.3214C8.49111 11.634 8.66671 12.0579 8.66671 12.4999C8.66671 12.9419 8.49111 13.3659 8.17855 13.6784C7.86599 13.991 7.44207 14.1666 7.00004 14.1666ZM12 16.6666V8.33325H2.00004V16.6666H12ZM12 6.66658C12.4421 6.66658 12.866 6.84218 13.1785 7.15474C13.4911 7.4673 13.6667 7.89122 13.6667 8.33325V16.6666C13.6667 17.1086 13.4911 17.5325 13.1785 17.8451C12.866 18.1577 12.4421 18.3333 12 18.3333H2.00004C1.55801 18.3333 1.13409 18.1577 0.821529 17.8451C0.508969 17.5325 0.333374 17.1086 0.333374 16.6666V8.33325C0.333374 7.40825 1.07504 6.66658 2.00004 6.66658H2.83337V4.99992C2.83337 3.89485 3.27236 2.83504 4.05376 2.05364C4.83516 1.27224 5.89497 0.833252 7.00004 0.833252C7.54721 0.833252 8.08903 0.941026 8.59455 1.15042C9.10008 1.35982 9.55941 1.66673 9.94632 2.05364C10.3332 2.44055 10.6401 2.89988 10.8495 3.4054C11.0589 3.91093 11.1667 4.45274 11.1667 4.99992V6.66658H12ZM7.00004 2.49992C6.337 2.49992 5.70111 2.76331 5.23227 3.23215C4.76343 3.70099 4.50004 4.33688 4.50004 4.99992V6.66658H9.50004V4.99992C9.50004 4.33688 9.23665 3.70099 8.76781 3.23215C8.29896 2.76331 7.66308 2.49992 7.00004 2.49992Z"
+              fill="#343A40" />
+          </svg>
+          <span class="top-menu-text" (click)="onSignOut()">Change Password</span>
+        </div>
+        <div class="top-menu-item">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11.3333 13.1667V10.6667H5.5V7.33342H11.3333V4.83342L15.5 9.00008L11.3333 13.1667ZM9.66667 0.666748C10.1087 0.666748 10.5326 0.842343 10.8452 1.1549C11.1577 1.46746 11.3333 1.89139 11.3333 2.33341V4.00008H9.66667V2.33341H2.16667V15.6667H9.66667V14.0001H11.3333V15.6667C11.3333 16.1088 11.1577 16.5327 10.8452 16.8453C10.5326 17.1578 10.1087 17.3334 9.66667 17.3334H2.16667C1.72464 17.3334 1.30072 17.1578 0.988155 16.8453C0.675595 16.5327 0.5 16.1088 0.5 15.6667V2.33341C0.5 1.89139 0.675595 1.46746 0.988155 1.1549C1.30072 0.842343 1.72464 0.666748 2.16667 0.666748H9.66667Z"
+              fill="#343A40" />
+          </svg>
+          <span class="top-menu-text" (click)="onSignOut()">Logout</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<router-outlet></router-outlet>
+
+<!-- Toolbar -->
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

@@ -1,0 +1,142 @@
+.card-verify {
+  margin-top: 32px;
+  background-color:  white;
+  width: 756px;
+  min-height: 232px;
+  padding: 24px;
+  box-shadow: 0px 10px 20px rgba(56, 65, 74, 0.05);
+  border-radius: 6px;
+}
+
+.card-qrcode {
+  margin-top: 32px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(56, 65, 74, 0.05);
+  border-radius: 6px;
+  width: 164px;
+  height: 164px;
+  margin-left: 40px;
+}
+
+.form-qrcode {
+  margin-top: 20px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 41.36px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  word-wrap: break-word;
+}
+
+
+.code {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #343A40;
+}
+
+.code-input {
+  width: 120px;
+  height: 37px;
+  border-radius: 3.2px;
+  box-sizing: border-box;
+  border: 1px solid #CED4DA;
+  margin-top: 8px;
+}
+
+.qrcode {
+  width: 164px;
+  height: 164px;
+}
+
+.qrcode .title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16.09px;
+  align-content: center;
+}
+
+.qrcode .input {
+  width: 72px;
+  height: 24px;
+  border: 2px solid #62D867;
+  box-sizing: border-box;
+  border-radius: 4px;
+  align-content: center;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #505D68;
+  
+}
+
+.qrCode .input.fail {
+  background: #FFFFFF;
+  /* Red */
+  border: 1px solid #F1556C;
+  box-sizing: border-box;
+  border-radius: 3.2px;
+}
+
+.qrCode .input.success {
+  background: #FFFFFF;
+  /* Red */
+  border: 1px solid #F1556C;
+  box-sizing: border-box;
+  border-radius: 3.2px;
+}
+
+
+.input-icons span {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.input-icons {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.icon {
+  padding: 10px;
+  min-width: 40px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.icon-check {
+  color: #1ABC9C;
+}
+
+.icon-fail {
+  color: #F1556C;
+}
+
+.status-fail {
+  border-color: #F1556C;
+}
+
+.mat-spinner-color::ng-deep circle{
+  stroke: #4FC6E1 !important;
+}
+
+.form-button {
+  margin-top: 24px;
+}

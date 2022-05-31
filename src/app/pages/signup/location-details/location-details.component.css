@@ -1,0 +1,38 @@
+.card-icon {
+  font-size: 50px;
+  color: #4A81D4;
+}
+
+.btn-desk {
+  background-color: #F3F7F9;
+  color: black;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16.09px;
+  border-radius: 2.4px;
+  border: 0;
+  height: 37px;
+  margin-right: 12px;
+  padding: 10px 11px;
+}
+
+.btn-desk.active {
+  background-color: #1ABC9C;
+  color: white;
+}
+
+.card-title {
+  margin: 32px 0 20px;
+}
+
+.card-content {
+  margin-bottom: 12px;
+}
+
+.card-label {
+  margin-top: 24px;
+}
+
+button[type="submit"] {
+  margin: 32px 0;
+}

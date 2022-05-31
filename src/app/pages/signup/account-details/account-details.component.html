@@ -1,0 +1,108 @@
+<div class="main-wrapper bg-auth">
+  <div class="d-flex justify-content-center logo">
+    <app-logo></app-logo>
+  </div>
+  <div class="d-flex sign-up justify-content-center">
+    <form class="auth-form" [formGroup]="form" (ngSubmit)="disableFirst() && form.valid && onContinue()">
+      <mat-card class="box card-main">
+        <div>
+          <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center align-items-center">
+              <span class="number-circle active d-flex justify-content-center align-items-center">
+                <mat-icon>done</mat-icon>
+              </span>
+            </div>
+            <div class="d-flex align-items-center flex-fill">
+              <span layout="row">
+                <hr class="horizontal-line" size="2" flex />
+              </span>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+              <span class="number-circle active d-flex justify-content-center align-items-center">
+                <mat-icon>done</mat-icon>
+              </span>
+            </div>
+            <div class="d-flex align-items-center flex-fill">
+              <span layout="row">
+                <hr class="horizontal-line" size="2" flex />
+              </span>
+            </div>
+            <div class="d-flex justify-content-center align-items-center ms-1">
+              <span class="number-circle active d-flex justify-content-center align-items-center">
+                3
+              </span>
+            </div>
+          </div>
+          <div class="d-flex justify-content-start">
+            <div class="card-title">Account Details</div>
+          </div>
+        </div>
+        <mat-card-content>
+          <div class="card-content ">
+            Text that explains what to fill in. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod.
+          </div>
+          <mat-error class="form-control-feedback">
+            {{ errorMessage }}
+          </mat-error>
+          <div class="card-content ">
+            <label class="card-label"> Name</label>
+            <div class="row">
+              <div class="col-6">
+                <input class="form-control" placeholder="First name" formControlName="firstName"
+                  [(ngModel)]="account.firstName">
+                <mat-error *ngIf="!isFirst && form.controls['firstName'].hasError('required')"
+                  class="form-control-feedback">
+                  First name is Required.
+                </mat-error>
+              </div>
+              <div class="col-6">
+                <input class="form-control" placeholder="Last name" formControlName="lastName"
+                  [(ngModel)]="account.lastName">
+                <mat-error *ngIf="!isFirst && form.controls['lastName'].hasError('required')"
+                  class="form-control-feedback">
+                  Last name is Required.
+                </mat-error>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label class="card-label">Phone</label>
+            <input class="form-control" formControlName="phone" [(ngModel)]="account.phone">
+            <mat-error *ngIf="!isFirst && form.controls['phone'].hasError('required')" class="form-control-feedback">
+              Phone is Required.
+            </mat-error>
+          </div>
+          <div class="mb-">
+            <label class="card-label">Email Address</label>
+            <input class="form-control" formControlName="email" [(ngModel)]="account.email">
+            <mat-error *ngIf="!isFirst && form.controls['email'].hasError('required')" class="form-control-feedback">
+              Email Address is Required.
+            </mat-error>
+          </div>
+          <div>
+            <label class="card-label">Password</label>
+            <input class="form-control" type="password" formControlName="password" [(ngModel)]="account.password">
+            <mat-error *ngIf="!isFirst && form.controls['password'].hasError('required')" class="form-control-feedback">
+              Password is Required.
+            </mat-error>
+          </div>
+          <div class="accept-terms">
+            <input type="checkbox" class="me-1">
+            <span class="card-content">I accept the </span>
+            <a class="_link-primary">Terms and Conditions</a>
+            <span class="card-content"> and </span>
+            <a class="_link-primary">Privacy Policy</a>
+          </div>
+          <div class="flex-container-hcenter d-flex">
+            <button type="submit" class="_btn-primary flex-fill">Continue</button>
+          </div>
+          <div class="flex-container-hcenter">
+            <a [routerLink]="[prevUrl]" class="_link-primary">Back</a>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

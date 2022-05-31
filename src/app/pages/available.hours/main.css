@@ -1,0 +1,37 @@
+.description {
+  font-size: 14px;
+  line-height: 150%;
+  color: #6C757D;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #343A40;
+}
+
+.btn-save {
+  background-color: #1ABC9C;
+  border-radius: 2.4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.09px;
+  color: white;
+  align-items: center;
+  width: 84px;
+  height: 37px;
+  border: 0;
+}
+
+.btn-cancel {
+  background-color: #F1F5F7;
+  border-radius: 2.4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.09px;
+  align-items: center;
+  width: 76px;
+  height: 37px;
+  border: 0;
+}

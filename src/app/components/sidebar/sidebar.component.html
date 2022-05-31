@@ -1,0 +1,103 @@
+<div class="sidebar">
+  <div class="sidebar-inner">
+    <div class="row">
+      <div class="col-12 mb-4 subTitle">
+        <span class="location-label">Location</span>
+        <span class="location-change">
+          Change
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 6.5C0 7.68669 0.351894 8.84672 1.01118 9.83342C1.67047 10.8201 2.60754 11.5891 3.7039 12.0433C4.80025 12.4974 6.00665 12.6162 7.17054 12.3847C8.33443 12.1532 9.40352 11.5818 10.2426 10.7426C11.0818 9.90352 11.6532 8.83443 11.8847 7.67054C12.1162 6.50665 11.9974 5.30025 11.5433 4.2039C11.0891 3.10754 10.3201 2.17047 9.33342 1.51118C8.34672 0.851894 7.18669 0.5 6 0.5C5.21207 0.5 4.43185 0.655195 3.7039 0.956723C2.97594 1.25825 2.31451 1.70021 1.75736 2.25736C0.632141 3.38258 0 4.9087 0 6.5ZM8.16 7.532C8.31588 7.21017 8.39788 6.85758 8.4 6.5C8.4 5.86348 8.14714 5.25303 7.69705 4.80294C7.24697 4.35286 6.63652 4.1 6 4.1V5.3L4.128 3.5L6 1.7V2.9C6.95478 2.9 7.87045 3.27928 8.54558 3.95441C9.22071 4.62955 9.6 5.54522 9.6 6.5C9.6012 7.17828 9.40752 7.84263 9.042 8.414L8.16 7.532ZM2.4 6.5C2.39879 5.82172 2.59247 5.15737 2.958 4.586L3.84 5.468C3.68412 5.78982 3.60212 6.14242 3.6 6.5C3.6 7.13652 3.85286 7.74697 4.30294 8.19705C4.75303 8.64714 5.36348 8.9 6 8.9V7.7L7.8 9.5L6 11.3V10.1C5.04522 10.1 4.12955 9.72071 3.45441 9.04558C2.77928 8.37045 2.4 7.45478 2.4 6.5Z" fill="#00ACC1"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div class="location">
+      {{ location?.name }}
+    </div>
+    <div class="earning row">
+      <div class="col-11">
+        <div class="earning-title">
+          Earnings-July
+        </div>
+        <div class="earning-amount">
+          $1,123.45
+        </div>
+      </div>
+      <div class="col-1 d-flex justify-content-center align-items-center">
+        <span class="earning-icon">
+          <i class="fas fa-exclamation-circle"></i>
+        </span>
+      </div>
+    </div>
+    
+    <div class="menu">
+      <div [class]="selectedItem == menuItem.MENU_ITEM_DESKS ? 'menu-item active' : 'menu-item'">
+        <a class="link_no_decoration" [routerLink]="route_desk">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.99999 6H21C21.55 6 22 6.45 22 7C22 7.55 21.55 8 21 8V19H19V17H15V19H13V8H4.99999V19H2.99999V8C2.44999 8 1.99999 7.55 1.99999 7C1.99999 6.45 2.44999 6 2.99999 6ZM16 10.5V11H18V10.5C18 10.22 17.78 10 17.5 10H16.5C16.22 10 16 10.22 16 10.5ZM16 14.5V15H18V14.5C18 14.22 17.78 14 17.5 14H16.5C16.22 14 16 14.22 16 14.5Z" [style.fill]="selectedItem == menuItem.MENU_ITEM_DESKS ? '#00ACC1' : '#6E768E'" />
+          </svg>            
+          <span class="menu-item-label">Desks</span>
+        </a>
+      </div>
+      <div [class]="selectedItem == menuItem.MENU_ITEM_BOOKINGS ? 'menu-item active' : 'menu-item'">
+        <a class="link_no_decoration" href="">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 13H16.5V15.82L18.94 17.23L18.19 18.53L15 16.69V13ZM19 8H5V19H9.67C9.24 18.09 9 17.07 9 16C9 14.1435 9.7375 12.363 11.0503 11.0503C12.363 9.7375 14.1435 9 16 9C17.07 9 18.09 9.24 19 9.67V8ZM5 21C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 3.89 3.89 3 5 3H6V1H8V3H16V1H18V3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V11.1C22.24 12.36 23 14.09 23 16C23 17.8565 22.2625 19.637 20.9497 20.9497C19.637 22.2625 17.8565 23 16 23C14.09 23 12.36 22.24 11.1 21H5ZM16 11.15C14.7137 11.15 13.4801 11.661 12.5705 12.5705C11.661 13.4801 11.15 14.7137 11.15 16C11.15 18.68 13.32 20.85 16 20.85C16.6369 20.85 17.2676 20.7246 17.856 20.4808C18.4444 20.2371 18.9791 19.8798 19.4295 19.4295C19.8798 18.9791 20.2371 18.4444 20.4808 17.856C20.7246 17.2676 20.85 16.6369 20.85 16C20.85 13.32 18.68 11.15 16 11.15Z" [style.fill]="selectedItem == menuItem.MENU_ITEM_BOOKINGS ? '#00ACC1' : '#6E768E'"/>
+          </svg>            
+          <span class="menu-item-label">Bookings</span>
+        </a>
+      </div>
+      <div [class]="selectedItem == menuItem.MENU_ITEM_RENTALS ? 'menu-item active' : 'menu-item'">
+        <a class="link_no_decoration" href="">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 3H14.82C14.4 1.84 13.3 1 12 1C10.7 1 9.6 1.84 9.18 3H5C4.46957 3 3.96086 3.21071 3.58579 3.58579C3.21071 3.96086 3 4.46957 3 5V19C3 19.5304 3.21071 20.0391 3.58579 20.4142C3.96086 20.7893 4.46957 21 5 21H19C19.5304 21 20.0391 20.7893 20.4142 20.4142C20.7893 20.0391 21 19.5304 21 19V5C21 4.46957 20.7893 3.96086 20.4142 3.58579C20.0391 3.21071 19.5304 3 19 3ZM12 3C12.2652 3 12.5196 3.10536 12.7071 3.29289C12.8946 3.48043 13 3.73478 13 4C13 4.26522 12.8946 4.51957 12.7071 4.70711C12.5196 4.89464 12.2652 5 12 5C11.7348 5 11.4804 4.89464 11.2929 4.70711C11.1054 4.51957 11 4.26522 11 4C11 3.73478 11.1054 3.48043 11.2929 3.29289C11.4804 3.10536 11.7348 3 12 3ZM7 7H17V5H19V19H5V5H7V7ZM7.5 13.5L9 12L11 14L15.5 9.5L17 11L11 17L7.5 13.5Z" [style.fill]="selectedItem == menuItem.MENU_ITEM_RENTALS ? '#00ACC1' : '#6E768E'"/>
+          </svg> 
+          <span class="menu-item-label">Completed Rentals</span>
+        </a>
+      </div>
+      <div class="d-flex">
+        <span layout="row"><hr class="menu-item-line" size="2" flex/></span>
+      </div>
+      <div [class]="selectedItem == menuItem.MENU_ITEM_LOCATION_SETTING ? 'menu-item active' : 'menu-item'">
+        <a class="link_no_decoration" [routerLink]="route_location_setting">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 18H6V14H12V18ZM21 14V12L20 7H4L3 12V14H4V20H14V14H18V20H20V14H21ZM20 4H4V6H20V4Z" [style.fill]="selectedItem == menuItem.MENU_ITEM_LOCATION_SETTING ? '#00ACC1' : '#6E768E'"/>
+          </svg>
+          <span class="menu-item-label">Location Settings</span>
+        </a>
+      </div>
+      <div [class]="selectedItem == menuItem.MENU_ITEM_PHOTOS ? 'menu-item active' : 'menu-item'">
+        <a class="link_no_decoration" [routerLink]="route_photo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 19H5V5H19V19ZM19 3H5C4.46957 3 3.96086 3.21071 3.58579 3.58579C3.21071 3.96086 3 4.46957 3 5V19C3 19.5304 3.21071 20.0391 3.58579 20.4142C3.96086 20.7893 4.46957 21 5 21H19C19.5304 21 20.0391 20.7893 20.4142 20.4142C20.7893 20.0391 21 19.5304 21 19V5C21 4.46957 20.7893 3.96086 20.4142 3.58579C20.0391 3.21071 19.5304 3 19 3ZM13.96 12.29L11.21 15.83L9.25 13.47L6.5 17H17.5L13.96 12.29Z" [style.fill]="selectedItem == menuItem.MENU_ITEM_PHOTOS ? '#00ACC1' : '#6E768E'"/>
+          </svg>
+          <span class="menu-item-label">Photos</span>
+        </a>
+      </div>
+      <div [class]="selectedItem == menuItem.MENU_ITEM_AVAIABLE_HOURS ? 'menu-item active' : 'menu-item'">
+        <a class="link_no_decoration" [routerLink]="route_available_hours">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 20C14.1217 20 16.1565 19.1571 17.6568 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6568 6.34315C16.1565 4.84285 14.1217 4 12 4C9.87823 4 7.8434 4.84285 6.34311 6.34315C4.84282 7.84344 3.99997 9.87827 3.99997 12C3.99997 14.1217 4.84282 16.1566 6.34311 17.6569C7.8434 19.1571 9.87823 20 12 20ZM12 2C13.3132 2 14.6135 2.25866 15.8268 2.7612C17.0401 3.26375 18.1424 4.00035 19.071 4.92893C19.9996 5.85752 20.7362 6.95991 21.2388 8.17317C21.7413 9.38642 22 10.6868 22 12C22 14.6522 20.9464 17.1957 19.071 19.0711C17.1957 20.9464 14.6521 22 12 22C6.46997 22 1.99997 17.5 1.99997 12C1.99997 9.34784 3.05353 6.8043 4.9289 4.92893C6.80426 3.05357 9.3478 2 12 2ZM12.5 7V12.25L17 14.92L16.25 16.15L11 13V7H12.5Z" [style.fill]="selectedItem == menuItem.MENU_ITEM_AVAIABLE_HOURS ? '#00ACC1' : '#6E768E'"/>
+          </svg>  
+          <span class="menu-item-label">Available Hours</span>
+        </a>
+      </div>
+      <div class="d-flex">
+        <span layout="row"><hr class="menu-item-line" size="2" flex/></span>
+      </div>
+      <div [class]="selectedItem == menuItem.MENU_ITEM_QR_CODES ? 'menu-item active' : 'menu-item'">
+        <a class="link_no_decoration" href="">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 21H13V19H15V21ZM13 14H11V19H13V14ZM21 12H19V16H21V12ZM19 10H17V12H19V10ZM7 12H5V14H7V12ZM5 10H3V12H5V10ZM12 5H14V3H12V5ZM4.5 4.5V7.5H7.5V4.5H4.5ZM9 9H3V3H9V9ZM4.5 16.5V19.5H7.5V16.5H4.5ZM9 21H3V15H9V21ZM16.5 4.5V7.5H19.5V4.5H16.5ZM21 9H15V3H21V9ZM19 19V16H15V18H17V21H21V19H19ZM17 12H13V14H17V12ZM13 10H7V12H9V14H11V12H13V10ZM14 9V7H12V5H10V9H14ZM6.75 5.25H5.25V6.75H6.75V5.25ZM6.75 17.25H5.25V18.75H6.75V17.25ZM18.75 5.25H17.25V6.75H18.75V5.25Z" [style.fill]="selectedItem == menuItem.MENU_ITEM_QR_CODES ? '#00ACC1' : '#6E768E'"/>
+          </svg>            
+          <span class="menu-item-label">QR Codes&nbsp;&nbsp;
+
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 13.8333H3C2.54167 13.8333 2.16667 13.4583 2.16667 13V3C2.16667 2.54167 2.54167 2.16667 3 2.16667H7.16667C7.625 2.16667 8 1.79167 8 1.33333C8 0.875 7.625 0.5 7.16667 0.5H2.16667C1.72464 0.5 1.30072 0.675595 0.988155 0.988155C0.675595 1.30072 0.5 1.72464 0.5 2.16667V13.8333C0.5 14.75 1.25 15.5 2.16667 15.5H13.8333C14.75 15.5 15.5 14.75 15.5 13.8333V8.83333C15.5 8.375 15.125 8 14.6667 8C14.2083 8 13.8333 8.375 13.8333 8.83333V13C13.8333 13.4583 13.4583 13.8333 13 13.8333ZM9.66667 1.33333C9.66667 1.79167 10.0417 2.16667 10.5 2.16667H12.6583L5.05 9.775C4.89419 9.93081 4.80665 10.1421 4.80665 10.3625C4.80665 10.5829 4.89419 10.7942 5.05 10.95C5.20581 11.1058 5.41714 11.1934 5.6375 11.1934C5.85786 11.1934 6.06919 11.1058 6.225 10.95L13.8333 3.34167V5.5C13.8333 5.95833 14.2083 6.33333 14.6667 6.33333C15.125 6.33333 15.5 5.95833 15.5 5.5V1.33333C15.5 0.875 15.125 0.5 14.6667 0.5H10.5C10.0417 0.5 9.66667 0.875 9.66667 1.33333Z" fill="#6E768E"/>
+            </svg>            
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

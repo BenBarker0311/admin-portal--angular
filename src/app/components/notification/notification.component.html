@@ -1,0 +1,14 @@
+<div [class]="class" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+      {{ message }}
+    </div>
+    <button 
+    type="button" 
+    class="btn-close btn-close-white me-2 m-auto" 
+    (click)="onClose()"
+    data-bs-dismiss="toast" 
+    aria-label="Close">
+  </button>
+  </div>
+</div>

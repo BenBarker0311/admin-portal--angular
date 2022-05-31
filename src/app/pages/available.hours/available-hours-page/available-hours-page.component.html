@@ -1,0 +1,38 @@
+<div class="d-flex flex-row">
+  <app-sidebar [selectedItem]="menuItem.MENU_ITEM_AVAIABLE_HOURS"></app-sidebar>
+  <div class="container">
+    <div class="title mb-2">
+      Available Hours
+    </div>
+    <div class="description mb-2">
+      Text explaning how to configure the standard available hours and how to add exceptions and holiday hours. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+    </div>
+    <div class="main mb-3">
+      <app-available-schedule></app-available-schedule>
+    </div>
+    <div class="subTitle mb-2">
+      Exceptions
+    </div>
+    <div class="description mb-3">
+      Text explaning how exceptions work and how to configure them. E.g an exception period can never overlap an existing exception period.
+    </div>
+    <div class="p-2 mb-3">
+      <div class="row">
+        <div class="col-4 d-flex justify-content-start exception-title">
+          title
+        </div>
+        <div class="col-4 d-flex justify-content-center exception-date">
+          date
+        </div>
+        <div class="col-4 d-flex justify-content-end exception-status">
+          avaiable
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <button class="btn-main ps-3 pe-3" (click)="onAdd()">
+        +&nbsp;Add Exception
+      </button>
+    </div>  
+  </div>
+</div>

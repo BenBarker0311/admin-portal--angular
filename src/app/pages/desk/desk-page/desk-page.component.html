@@ -1,0 +1,64 @@
+<div class="container-form d-flex flex-row">
+  <app-sidebar [selectedItem]="menuItem.MENU_ITEM_DESKS"></app-sidebar>
+  <div class="_container">
+    <div class="title">
+      Desks
+    </div>
+    <div class="">
+      <button class="btn-main" (click)="onAdd()">
+        + Add New Desk
+      </button>
+    </div>
+    <div class="desk-container">
+      <div class="col-12" *ngIf="desks.length > 0 else elseBlock">
+        <div class="row col-10">
+          <div class="col-4" *ngFor="let desk of desks">
+            <app-desk-form [desk]="desk"></app-desk-form>
+          </div>
+        </div>
+      </div>
+      <ng-template #elseBlock>
+        <div class="col-6">
+          <app-no-desk></app-no-desk>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btnModal"
+    hidden>
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-model="true"
+    role="dialog">
+    <div class="modal-dialog dialog">
+      <div class="modal-content">
+        <mat-card class="box card-auth p-5">
+          <div class="col-12 mb-3">
+            <div class="d-flex justify-content-center mb-3">
+              <span class="card-icon d-flex justify-content-center align-items-center">
+                <mat-icon [ngStyle]="{'color': '#1ABC9C', 'font-size': '40px', 'width': '40px', 'height': '40px' }">done
+                </mat-icon>
+              </span>
+            </div>
+            <div class="card-title d-flex justify-content-center">Desk added!</div>
+          </div>
+          <mat-card-content>
+            <div class="mb-4 card-content">
+              Text explaining that the desk have been added, but it is not yet visible in the system. The user need to
+              flip the “active” switch to make the table available in the system.
+            </div>
+            <div class="mb-3 flex-container-hcenter">
+              <input type="checkbox" class="me-1 mt-1" [checked]="notShowModal" (change)="getStats($event)">
+              Don't show again
+            </div>
+            <div class="flex-container-hcenter">
+              <button class="btn-next" data-bs-dismiss="modal" aria-label="Close" (click)="onClose()">Close</button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>

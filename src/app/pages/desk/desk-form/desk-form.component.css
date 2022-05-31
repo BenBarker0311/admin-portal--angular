@@ -1,0 +1,24 @@
+.desk {
+  background: #FFFFFF;
+  box-shadow: 0px 10px 50px rgba(56, 65, 74, 0.0313726);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.number {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 41.36px;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.salary {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 27.58px;
+}

@@ -1,0 +1,28 @@
+<div class="d-flex flex-row">
+  <app-sidebar [selectedItem]="menuItem.MENU_ITEM_DESKS"></app-sidebar>
+  <div class="_container">
+    <div class="title">
+      Add New Desk
+    </div>
+    <div class="d-flex justify-content-left mb-3">
+      <div class="d-flex justify-content-center align-items-center me-1">
+        <span class="number-circle active d-flex justify-content-center align-items-center">
+          <mat-icon>done</mat-icon>
+        </span>
+      </div>
+      <div class="d-flex align-items-center">
+        <span layout="row">
+          <hr class="horizontal-line" size="2" flex />
+        </span>
+      </div>
+      <div class="d-flex justify-content-center align-items-center ms-1">
+        <span class="number-circle active d-flex justify-content-center align-items-center">
+          2
+        </span>
+      </div>
+    </div>
+    <div class="desk-container">
+      <app-desk-input-form [routeMethod]="createMethod"></app-desk-input-form>
+    </div>
+  </div>
+</div>

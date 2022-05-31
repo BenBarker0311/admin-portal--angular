@@ -1,0 +1,92 @@
+<div class="d-flex flex-row">
+  <app-sidebar [selectedItem]="menuItem.MENU_ITEM_LOCATION_SETTING"></app-sidebar>
+  <div class="desks">
+    <form [formGroup]="form" (ngSubmit)="disableFirst() && form.valid && onSave()">
+      <div class="title mb-5">
+        Location Settings
+      </div>
+      <div class="col-8 p-3 mb-5">
+        <div class="subTitle mb-4">
+          Location Details
+        </div>
+        <div class="form-label mb-2">
+          Description
+        </div>
+        <div class="mb-1">
+          <textarea class="form-control" maxlength="80" formControlName="description"></textarea>
+          <mat-error *ngIf="!isFirst && form.controls['description'].hasError('required')" class="form-control-feedback">
+            Description is required.
+          </mat-error>
+        </div>
+        <div class="description mb-3">
+          Oneliner that describes your business and what is unique.
+        </div>
+        <div class="form-label mb-2">
+          Private Information
+        </div>
+        <div class="mb-1">
+          <textarea class="form-control" formControlName="privateInformation"></textarea>
+          <mat-error *ngIf="!isFirst && form.controls['privateInformation'].hasError('required')" class="form-control-feedback">
+            Private Information is required.
+          </mat-error>
+        </div>
+        <div class="description mb-3">
+          This information is only shown to checked in users. Fill in important information such as code to washrooms, how to book conference rooms, etc.
+        </div>
+        <div class="form-label mb-2">
+          Facilites
+        </div>
+        <div class="flex d-flex mb-1">
+          <button type="button" *ngFor="let facility of facilityList; index as i" [class]="facilityList[i].class || facilityClass"  (click)="onFacility(i)">{{facility.name}}</button>
+        </div>
+        <div class="mt-5 subTitle mb-4">
+          Contract Information
+        </div>
+        <div class="form-label mb-2">
+          Phone Number
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control input-phone-number" formControlName="phoneNumber">
+          <mat-error *ngIf="!isFirst && form.controls['phoneNumber'].hasError('required')" class="form-control-feedback">
+            PhoneNumber is required.
+          </mat-error>
+        </div>
+        <div class="form-label mb-2">
+          Email
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control input-email" formControlName="email">
+          <mat-error *ngIf="!isFirst && form.controls['email'].hasError('required')" class="form-control-feedback">
+            Email is required.
+          </mat-error>
+          <mat-error *ngIf="!isFirst && form.controls['email'].hasError('email')" class="form-control-feedback">
+            Email is not Correct.
+          </mat-error>
+        </div>
+        <div class="form-label mb-2">
+          Website
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" formControlName="website">
+          <mat-error *ngIf="!isFirst && form.controls['website'].hasError('required')" class="form-control-feedback">
+            Website is required.
+          </mat-error>
+        </div>
+        <div>
+          <button type="submit" class="btn-save me-3">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="field-notification m-3" *ngIf="isNotificationShow">
+  <!-- <app-notification></app-notification> -->
+    <app-notification 
+      [class]="notificationClass"
+      message="Settings saved"
+      [onClose]="onCloseNotification">
+    </app-notification>
+</div>
+
+<router-outlet></router-outlet>

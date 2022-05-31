@@ -1,0 +1,61 @@
+<div class="main-wrapper bg-auth">
+  <!-- <img src = "assets/images/auth_back.png"> -->
+  <div class="d-flex justify-content-center logo">
+    <app-logo></app-logo>
+  </div>
+  <div class="d-flex justify-content-center">
+    <form class="auth-form" [formGroup]="form" (ngSubmit)="disableFirst() && form.valid && onLogIn()">
+      <mat-card class="box card-main">
+        <div class="card-title justify-content-start">Business Login</div>
+        <mat-error *ngIf="errorMessage" class="form-control-feedback">
+          {{errorMessage}}
+        </mat-error>
+        <mat-card-content>
+          <div>
+            <div class="d-flex justify-content-start">
+              <label class="card-label">Email Address</label>
+            </div>
+            <div class="d-flex justify-content-center">
+              <input type="email" class="form-control" placeholder="name@example.com" formControlName="email"
+                [(ngModel)]="email">
+            </div>
+            <mat-error *ngIf="!isFirst && form.controls['email'].hasError('required')" class="form-control-feedback">
+              Email Address is required.
+            </mat-error>
+            <mat-error *ngIf="!isFirst && form.controls['email'].hasError('email')" class="form-control-feedback">
+              Email Address is invalid.
+            </mat-error>
+          </div>
+          <div class="scond-label">
+            <label class="card-label"> Password</label>
+            <a id="forgetPassword" class="_link-primary" [routerLink]="[resetPasswordRoute]">Forgot password?</a>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="input-with-icon col-12">
+              <input type="password" class="form-control" minlength="8" formControlName="password"
+                [(ngModel)]="password">
+              <span class="input-icon">
+                <mat-icon>remove_red_eye</mat-icon>
+              </span>
+            </div>
+          </div>
+          <mat-error *ngIf="!isFirst && form.controls['password'].hasError('required')" class="form-control-feedback">
+            Password is required.
+          </mat-error>
+          <mat-error *ngIf="!isFirst && form.controls['password'].hasError('minlength')" class="form-control-feedback">
+            Min length of Password is 8.
+          </mat-error>
+          <button class="_btn-primary btn-login col-12">Log In</button>
+          <div class="flex-container-hcenter">
+            <div>
+              <span class="card-footer-label">No account yet? </span>
+              <a (click)="onSignUp()" class="_link-primary">Sign up</a>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

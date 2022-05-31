@@ -1,0 +1,29 @@
+<div class="main-wrapper bg-auth">
+  <!-- <img src = "assets/images/auth_back.png"> -->
+  <div class="d-flex justify-content-center logo">
+    <app-logo></app-logo>
+  </div>
+  <div class="d-flex justify-content-center">
+    <mat-card class="auth-form login-form box card-main pt-5 ps-5 pb-4 pe-5">
+      <div class="d-flex justify-content-center">
+        <span class="card-icon d-flex justify-content-center align-items-center">
+          <mat-icon [ngStyle]="{'color': '#1ABC9C', 'font-size': '40px', 'width': '40px', 'height': '40px' }">
+            mail_outline</mat-icon>
+        </span>
+      </div>
+      <div class="card-title d-flex justify-content-center">Check your inbox</div>
+      <mat-card-content>
+        <div class="card-content">
+          We’ve sent you instructions how to reset your password to your email address.
+          <br><br>
+          If it doesn’t arrive soon, please check your spam folder or try to send it again.
+        </div>
+        <div class="flex-container-hcenter">
+          <a class="_link-primary" [routerLink]="logInRoute">Back to Log In</a>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

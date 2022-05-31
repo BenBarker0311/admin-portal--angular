@@ -1,0 +1,32 @@
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #F1556C;
+  color: #F1556C;
+
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 20.68px;
+}
+
+.card-icon .mat-icon {
+  font-size: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+.card-main {
+  width: 424px;
+}
+
+.card-title {
+  margin: 32px 0 20px;
+}
+
+a {
+  margin-top: 35px;
+}
+
+.card-content {
+  text-align: center;
+}

@@ -1,0 +1,36 @@
+<div class="d-flex flex-row">
+  <app-sidebar [selectedItem]="menuItem.MENU_ITEM_PHOTOS"></app-sidebar>
+  <div class="container">
+    <div class="title mb-2">
+      Photos
+    </div>
+    <div class="description mb-2">
+      Upload photos of your location to give the users a better picture of what to expect. One photo is required, but we recommend that you upload at least 3 photos.
+    </div>
+    <div class="mb-3">
+      <button class="btn-main ps-3 pe-3" (click)="onUpload()">
+        +&nbsp;Upload Photo
+      </button>
+    </div>  
+    <div class="col-12 m-3" *ngIf="photos.length > 0 else elseBlock">
+      <!-- <div class="row p-3 col-10">
+        <div class="col-4" *ngFor="let photo of photos">
+          <app-desk-form [photo]="desk"></app-desk-form>
+        </div>
+      </div> -->
+    </div>
+    <ng-template #elseBlock>
+      <div class="col-6 m-3">
+        <app-no-photo></app-no-photo>
+      </div>
+    </ng-template>
+
+    <div class="count-upload mt-3">
+      {{photos.length}} of 5
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btnModal" hidden>
+    Launch demo modal
+  </button>
+  

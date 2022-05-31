@@ -1,0 +1,277 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* @font-face {
+  font-family: 'Ubuntu';
+  src: url('assets/Ubuntu/Ubuntu-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('assets/Ubuntu/Ubuntu-Bold.ttf');
+} */
+
+
+* {
+  font-family: 'Ubuntu';
+}
+
+/* darkhorse */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  overflow-y: hidden;
+}
+
+.bg-auth {
+  position: relative;
+  background-image: url("assets/images/auth_back.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow-y: auto;
+}
+
+.logo {
+  position: relative;
+  margin-top: 100px;
+}
+
+.card-main {
+  padding: 36px 52px 34px !important;
+}
+
+.sign-up .card-main {
+  padding: 44px 52px 36px !important;
+}
+
+/* end darkhorse */
+
+.card-title {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #343A40;
+}
+
+.card-content {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #6C757D;
+}
+
+.card-label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #343A40;
+  margin-bottom: 8px;
+}
+
+.card-footer-label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #6C757D;
+}
+
+.card-icon {
+  font-size: 50px;
+  /* color: #1ABC9C;; */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #1ABC9C;
+}
+
+.input-form {
+  background: #FFFFFF !important;
+  border: 1px solid #CED4DA;
+  box-sizing: border-box;
+  border-radius: 3.2px;
+  height: 37px;
+}
+
+._btn-primary {
+  background: #00ACC1;
+  /* primary color */
+  border-radius: 4.8px;
+  color: white;
+  border: 0px;
+  height: 44px;
+  font-weight: 500;
+  font-size: 17.5px;
+  line-height: 20.11px;
+}
+
+._link-primary {
+  color: #00ACC1;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.flex-container-hcenter {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container-hleft {
+  display: flex;
+  justify-content: left;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.link_no_decoration {
+  text-decoration: none;
+  ;
+}
+
+.horizontal-line {
+  width: 132px;
+  height: 2px;
+  opacity: 100%;
+  color: #98A6AD;
+}
+
+.horizontal-line.active {
+  color: #4A81D4;
+}
+
+.number-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(108, 117, 125, 0.18);
+  color: #6C757D;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20.68px;
+}
+
+.number-circle.active {
+  background-color: #4A81D4;
+  color: white;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 1000;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+._container {
+  background-color: #E5E5E5;
+  width: 100%;
+  min-height: 100%;
+  padding: 32px 40px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 34px;
+  color: #343A40;
+  margin-bottom: 28px;
+}
+
+.btn-main {
+  background-color: #1ABC9C;
+  color: white;
+  border-radius: 50px;
+  border: 0;
+  height: 37px;
+}
+
+.btn-next {
+  background-color: #1ABC9C;
+  border-radius: 2.4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.09px;
+  color: white;
+  align-items: center;
+  width: 128px;
+  height: 37px;
+  border: 0;
+}
+
+
+.btn-cancel {
+  background-color: #F1F5F7;
+  border-radius: 2.4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.09px;
+  align-items: center;
+  width: 76px;
+  height: 37px;
+  border: 0;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 150%;
+  color: #6C757D;
+}
+
+/* darkhorse */
+.auth-form {
+  position: relative;
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+
+/* end darkhorse */
+
+.container-form {
+  min-height: 100%;
+}
+
+.desk-container {
+  margin-top: 32px
+}

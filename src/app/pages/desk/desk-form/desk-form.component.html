@@ -1,0 +1,25 @@
+<div class="desk p-3" (click)="onClick()">
+  <div class="row mb-3">
+    <div class="col-9 number">
+      {{ desk?.index }}
+    </div>
+    <div class="col-3">
+
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-9 title">
+      {{ desk?.description }}
+    </div>
+    <div class="col-3">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [checked]="desk?.active">
+      </div>
+    </div>  
+  </div>
+  <div class="row mb-3">
+    <div class="col-9 salary">
+      ${{ desk?.price }}/h
+    </div>
+  </div>  
+</div>

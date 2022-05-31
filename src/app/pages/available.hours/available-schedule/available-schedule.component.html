@@ -1,0 +1,33 @@
+<div *ngFor="let day of dayList">
+  <div class="row">
+    <div class="col-6">
+      <div class="day p-2">{{day.name}}
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="row">
+        <div class="col-5">
+          <div class="d-flex">
+            <div class="form-check form-switch m-2">
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [checked]="day.available">
+            </div>
+            <div class="avaiable m-2">{{day.available? "avaiable" : "unavaliable"}}</div>
+          </div>
+        </div>
+        <div class="col-7">
+          <div class="d-flex">
+            <div class="m-2">
+              <app-time-select></app-time-select>
+            </div>
+            <div class="minus m-2">
+              -
+            </div>
+            <div class="m-2">
+              <app-time-select></app-time-select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

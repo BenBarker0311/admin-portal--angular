@@ -1,0 +1,45 @@
+.day {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 17px;
+  /* Black */
+  color: #343A40;
+}
+
+.spin {
+  background: #00ACC1;
+}
+
+.avaiable {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.select {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.minus {
+  color: #6C757D
+}
+
+.exception-title {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 17px;
+  color: #343A40;
+}
+
+.exception-date {
+  font-size: 14px;
+  line-height: 18px;  
+  color: #6C757D;
+}
+
+.exception-status {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color:  #6C757D;
+}

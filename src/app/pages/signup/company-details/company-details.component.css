@@ -1,0 +1,20 @@
+.card-icon {
+  font-size: 40px;
+  color: #4A81D4;
+}
+
+.card-title {
+  margin: 32px 0 20px;
+}
+
+.card-content {
+  margin-bottom: 12px;
+}
+
+.card-label {
+  margin-top: 24px;
+}
+
+button {
+  margin: 32px 0 31px;
+}

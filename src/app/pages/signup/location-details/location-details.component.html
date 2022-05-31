@@ -1,0 +1,91 @@
+<div class="main-wrapper bg-auth">
+  <!-- <img src = "assets/images/auth_back.png"> -->
+  <div class="d-flex justify-content-center logo">
+    <app-logo></app-logo>
+  </div>
+  <div class="d-flex sign-up justify-content-center">
+    <form class="auth-form" [formGroup]="form" (ngSubmit)="disableFirst() && form.valid && onContinue()">
+      <mat-card class="card-main box">
+        <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center align-items-center">
+            <span class="number-circle active d-flex justify-content-center align-items-center">
+              1
+            </span>
+          </div>
+          <div class="d-flex align-items-center flex-fill">
+            <span layout="row">
+              <hr class="horizontal-line" size="2" flex />
+            </span>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <span class="number-circle d-flex justify-content-center align-items-center">
+              2
+            </span>
+          </div>
+          <div class="d-flex align-items-center flex-fill">
+            <span layout="row">
+              <hr class="horizontal-line" size="2" flex />
+            </span>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <span class="number-circle d-flex justify-content-center align-items-center">
+              3
+            </span>
+          </div>
+        </div>
+        <div class="card-title ustify-content-start">Location Details</div>
+        <mat-card-content>
+          <div class="card-content">
+            Text that explains what to fill in. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna.
+          </div>
+          <label class="card-label"> Location Name</label>
+          <input class="form-control" formControlName="name" [(ngModel)]="location.name" />
+          <mat-error *ngIf="!isFirst && form.controls['name'].hasError('required')" class="form-control-feedback">
+            Location Name is required.
+          </mat-error>
+          <label class="card-label"> Street Address</label>
+          <input class="form-control" formControlName="street" [(ngModel)]="location.streetAddress" />
+          <mat-error *ngIf="!isFirst && form.controls['street'].hasError('required')" class="form-control-feedback">
+            Street Address is Required.
+          </mat-error>
+          <label class="card-label"> Zip Code</label>
+          <input class="form-control" formControlName="zip" [(ngModel)]="location.zipCode" />
+          <mat-error *ngIf="!isFirst && form.controls['zip'].hasError('required')" class="form-control-feedback">
+            Zip Code is Required.
+          </mat-error>
+          <label class="card-label"> City</label>
+          <input class="form-control" formControlName="city" [(ngModel)]="location.city" />
+          <mat-error *ngIf="!isFirst && form.controls['city'].hasError('required')" class="form-control-feedback">
+            City is Required.
+          </mat-error>
+          <div>
+            <label class="card-label">Number of Desks</label>
+          </div>
+          <div class="d-inline-flex">
+            <div *ngFor="let btnClass of btnClasses; index as i; last as isLast">
+              <button type="button" class={{btnClass}} (click)="onSelect(i)" *ngIf="isLast else elseBlock">
+                More
+              </button>
+              <ng-template #elseBlock>
+                <button type="button" class={{btnClass}} (click)="onSelect(i)">
+                  {{i * 10 + 1}} ~ {{(i + 1) * 10}}
+                </button>
+              </ng-template>
+            </div>
+          </div>
+          <div class="d-flex">
+            <button type="submit" class="_btn-primary flex-fill">Continue</button>
+          </div>
+          <div class="flex-container-hcenter ">
+            <div>
+              <span class="card-footer-label">Already have an account? </span>
+              <a [routerLink]="[logInRoute]" class="_link-primary">Log in</a>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

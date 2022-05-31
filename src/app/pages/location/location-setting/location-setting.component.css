@@ -1,0 +1,99 @@
+.desks {
+  background-color:  #E5E5E5;
+  width: 100%;
+  min-height: 100%;
+  padding: 30px;
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16.09px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 11.49px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 41.36px;
+}
+
+.subTitle {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20.68px;
+}
+
+.btn-cancel {
+  background-color: #F1F5F7;
+  border-radius: 2.4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.09px;
+  align-items: center;
+  width: 76px;
+  height: 37px;
+  border: 0;
+}
+
+.btn-save {
+  background-color: #1ABC9C;
+  border-radius: 2.4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.09px;
+  color: white;
+  align-items: center;
+  width: 84px;
+  height: 37px;
+  border: 0;
+}
+
+.input-phone-number {
+  width: 354px;
+  height: 37px;
+  border-radius: 3.2px;
+}
+
+.input-email {
+  width: 354px;
+  height: 37px;
+  border-radius: 3.2px;
+}
+
+.btn-facility {
+ background-color: #F1F5F7; 
+ color: black;
+ font-weight: 400;
+ font-size: 12px;
+ line-height: 13.79px;
+ height: 32px;
+ border-radius: 2.4px;
+ border: 0px;
+}
+
+.btn-facility.active {
+  background-color:  #4A81D4;
+  color: white;
+}
+
+.field-notification {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 1000;
+
+  animation-name: example;
+  animation-duration: 0.5s;
+  animation-direction: alternate;  
+}
+
+@keyframes example {
+  0%   { top:0px; right:-200px;}
+  100%  { top:0px; right:0px;}
+}

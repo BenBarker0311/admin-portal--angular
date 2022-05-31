@@ -1,0 +1,11 @@
+<div class="d-flex flex-row">
+  <app-sidebar [selectedItem]="menuItem.MENU_ITEM_DESKS"></app-sidebar>
+  <div class="desks">
+    <div class="title mb-5">
+      Edit Desk
+    </div>
+    <div class="row">
+      <app-desk-input-form [routeMethod]="method"></app-desk-input-form>
+    </div>
+  </div>
+</div>

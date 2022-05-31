@@ -1,0 +1,119 @@
+.sidebar {
+  background-color: white;
+  width: 240px;
+  min-height: 100%;
+  box-shadow: 0px 0px 35px rgba(154, 161, 171, 0.14902);
+}
+
+.sidebar-inner {
+  padding: 20px;
+}
+
+.sidebar .row {
+  --bs-gutter-x: 0;
+}
+
+.location {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  right: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: #343A40;
+  margin-top: 5px;
+}
+
+.earning {
+  background-color: #F3F7F9;
+  border-radius: 6px;
+  padding: 10px 12px 14px 12px;
+  margin-top: 18px;
+  position: relative;
+}
+
+
+.earning-title {
+  font-weight: normal;
+  color: #98A6AD;
+}
+
+.earning-amount {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #343A40;
+  margin-top: 5px;
+}
+
+.earning-icon {
+  font-size: 20px;
+  color: #6E768E;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.menu {
+  margin-top: 24px;
+}
+
+.menu-item {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18.38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.menu-item  a {
+  color: #6E768E;
+}
+
+.menu-item.active a {
+  color: #00ACC1;  
+}
+
+.menu-item-label {
+  margin-left: 10px;
+}
+
+.menu-item-line {
+  color: #E5E8EB;
+  width: 200px;
+  height: 2px;
+  opacity: 100%;
+  margin-top: 0px;
+  margin-bottom: 24px;
+}
+
+.menu-seperator {
+  overflow: hidden;
+  font-size: 10px;
+  color: #E5E8EB;
+}
+
+
+.location-label {
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  color: #98A6AD;
+}
+
+.location-change {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 14.94px;
+  color: #00ACC1;
+  float: right;
+}
+
+.subTitle {
+  position: relative;
+}
+

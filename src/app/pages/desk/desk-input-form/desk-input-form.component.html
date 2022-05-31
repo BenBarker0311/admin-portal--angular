@@ -1,0 +1,63 @@
+<div class="desk-input-form">
+  <form [formGroup]="form" (ngSubmit)="disableFirst() && form.valid && onSave()">
+    <div class="subTitle" *ngIf="isEdit">
+      Desk1
+    </div>
+    <div class="form-label margin-code">
+      Code
+    </div>
+    <div class="d-flex qrcode">
+      <qr-code class="mb-1 me-2" [value]="qrCode" [size]="18"></qr-code>
+      <span class="qrcode-str">{{qrCode}}</span>
+    </div>
+    <div class="form-label">
+      Price <span class="required">*</span>
+    </div>
+    <div class="row margin-input-group">
+      <div class="input-group input-price">
+        <input type="text" class="form-control" formControlName="price">
+        <span class="input-group-text" id="basic-addon2">$/h</span>
+      </div>
+      <mat-error *ngIf="!isFirst && form.controls['price'].hasError('required')" class="form-control-feedback">
+        Price is required.
+      </mat-error>
+    </div>
+    <div class="description">
+      Prices are displayed in per hour in the app, even though users pay per minute.
+    </div>
+    <div class="form-label">
+      Description
+    </div>
+    <div class="margin-input-group">
+      <textarea class="form-control input-description textarea" formControlName="description"></textarea>
+      <mat-error *ngIf="!isFirst && form.controls['description'].hasError('required')" class="form-control-feedback">
+        Description is required.
+      </mat-error>
+    </div>
+    <div class="description">
+      Short text that describes the desk, e.g location on the premises, the surroundings, attributes, etc.
+    </div>
+    <div class="form-label">
+      Internal Reference
+    </div>
+    <div class="margin-input-group">
+      <input type="text" class="form-control input-ref" formControlName="internalRef">
+      <mat-error *ngIf="!isFirst && form.controls['internalRef'].hasError('required')" class="form-control-feedback">
+        InternalReference is required.
+      </mat-error>
+    </div>
+    <div class="description">
+      Identifier or name for the desk used internally. Not visible to end users.
+    </div>
+    <div>
+      <div class="col-8">
+        <button type="submit" class="btn-save me-3">Save</button>
+        <button type="button" class="btn-cancel" (click)="onCancel()">Cancel</button>
+      </div>
+
+      <div class="col-4" *ngIf="desk">
+        <button type="button" class="btn-delete" (click)="onDelete()">Delete Desk</button>
+      </div>
+    </div>
+  </form>
+</div>

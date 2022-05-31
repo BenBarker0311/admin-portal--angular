@@ -1,0 +1,81 @@
+<div class="d-flex flex-row">
+  <app-sidebar [selectedItem]="menuItem.MENU_ITEM_DESKS"></app-sidebar>
+  <div class="_container">
+    <div class="title">
+      Add New Desk
+    </div>
+    <div class="d-flex justify-content-left mb-3">
+      <div class="d-flex justify-content-center align-items-center me-1">
+        <span class="number-circle active d-flex justify-content-center align-items-center">
+          1
+        </span>
+      </div>
+      <div class="d-flex align-items-center">
+        <span layout="row">
+          <hr class="horizontal-line" size="2" flex />
+        </span>
+      </div>
+      <div class="d-flex justify-content-center align-items-center ms-1">
+        <span class="number-circle d-flex justify-content-center align-items-center">
+          2
+        </span>
+      </div>
+    </div>
+    <div class="desk-container d-flex flex-row">
+      <div class="card-verify">
+        <div class="description">
+          Text that explains that the user need to enter the code located beneath the QR code on the sticker. Lorem
+          ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna.
+        </div>
+        <form class="form-qrcode" [formGroup]="form" (ngSubmit)="disableFirst() && form.valid && onNext()">
+          <div class="code">
+            Code
+          </div>
+          <div class="flex d-flex mb-1">
+            <div class="code-input">
+              <div class="input-icons">
+                <input [class]="qrCodeInputClass" maxlength="6" placeholder="6 chars code" [(ngModel)]="qrCode"
+                  formControlName="qrCode">
+                <span *ngIf="status==extra.QRCODE_VERIFYING">
+                  <mat-spinner diameter="20" class="mat-spinner-color"></mat-spinner>
+                </span>
+                <span class="icon-check" *ngIf="status==extra.QRCODE_SUCCESS">
+                  <i class="fas fa-check"></i>
+                </span>
+                <span class="icon-fail" *ngIf="status==extra.QRCODE_FAIL">
+                  <i class="fas fa-times"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="flex d-flex align-items-center">
+            <mat-error *ngIf="!isFirst && form.controls['qrCode'].hasError('minlength')" class="form-control-feedback">
+              Code must be 6 length characters.
+            </mat-error>
+            <mat-error *ngIf="!isFirst && status==extra.QRCODE_FAIL" class="form-control-feedback">
+              Code is already tied to another desk.
+            </mat-error>
+          </div>
+          <div class="form-button">
+            <button type="submit" class="btn-next me-3" [disabled]="isBtnDisable">Next</button>
+            <button type="button" class="btn-cancel" (click)="onCancel()">Cancel</button>
+          </div>
+        </form>
+      </div>
+      <div class="card-qrcode">
+        <div class="qrcode flex d-flex align-items-center flex-column">
+          <div class="title mb-2">
+            DESKHUNTERS
+          </div>
+          <qr-code class="mb-1" [value]="qrCode"></qr-code>
+          <div>
+            <input type="text" class="form-control input" [(ngModel)]="qrCode" disabled>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

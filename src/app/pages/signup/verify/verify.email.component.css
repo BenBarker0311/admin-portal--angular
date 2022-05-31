@@ -1,0 +1,20 @@
+.loading {
+  width: 60px;
+  height: 60px;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16.09px;
+  color: white;
+}
+
+.mat-spinner-color::ng-deep circle{
+  stroke: white !important;
+}
+
+.auth-form {
+  position: absolute;
+  top: 203px;
+}

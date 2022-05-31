@@ -1,0 +1,75 @@
+<div class="main-wrapper bg-auth">
+  <!-- <img src = "assets/images/auth_back.png"> -->
+  <div class="d-flex justify-content-center logo">
+    <app-logo></app-logo>
+  </div>
+  <div class="d-flex sign-up justify-content-center">
+    <form class="auth-form" [formGroup]="form" (ngSubmit)="disableFirst() && form.valid && onContinue()">
+      <mat-card class="card-main box">
+        <div>
+          <div class="col-12">
+            <div class="d-flex justify-content-center">
+              <div class="d-flex justify-content-center align-items-center">
+                <span class="number-circle active d-flex justify-content-center align-items-center">
+                  <mat-icon>done</mat-icon>
+                </span>
+              </div>
+              <div class="d-flex align-items-center flex-fill">
+                <span layout="row">
+                  <hr class="horizontal-line active" size="2" flex />
+                </span>
+              </div>
+              <div class="d-flex justify-content-center align-items-center">
+                <span class="number-circle active d-flex justify-content-center align-items-center">
+                  2
+                </span>
+              </div>
+              <div class="d-flex align-items-center flex-fill">
+                <span layout="row">
+                  <hr class="horizontal-line" size="2" flex />
+                </span>
+              </div>
+              <div class="d-flex justify-content-center align-items-center">
+                <span class="number-circle d-flex justify-content-center align-items-center">
+                  3
+                </span>
+              </div>
+            </div>
+            <div class="card-title justify-content-start">Company Details</div>
+          </div>
+        </div>
+        <mat-card-content>
+          <div class="card-content">
+            Text that explains what to fill in. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod.
+          </div>
+          <label class="card-label">Company Name</label>
+          <input class="form-control" formControlName="name" [(ngModel)]="company.name">
+          <mat-error *ngIf="!isFirst && form.controls['name'].hasError('required')" class="form-control-feedback">
+            Company Name is Required.
+          </mat-error>
+          <label class="card-label">Type of Business</label>
+          <select class="form-control" formControlName="type" [(ngModel)]="company.businessType">
+            <option *ngFor="let businessType of businessTypes">{{businessType}}</option>
+          </select>
+          <mat-error *ngIf="!isFirst && form.controls['type'].hasError('required')" class="form-control-feedback">
+            Type of Business is Required
+          </mat-error>
+          <label class="card-label">Company Registration Number</label>
+          <input class="form-control" formControlName="registNumber" [(ngModel)]="company.registrationNumber">
+          <mat-error *ngIf="!isFirst && form.controls['registNumber'].hasError('required')"
+            class="form-control-feedback">
+            Registeration Number is Required.
+          </mat-error>
+          <div class="d-flex">
+            <button type="submit" class="_btn-primary flex-fill">Continue</button>
+          </div>
+          <div class="flex-container-hcenter">
+            <a [routerLink]="[prevRoute]" class="_link-primary">Back</a>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

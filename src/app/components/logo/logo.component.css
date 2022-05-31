@@ -1,0 +1,28 @@
+.short {
+  display: inline-flex;
+  min-width: 32px;
+  min-height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  border-radius: 4px;
+
+  background-color: #00ACC1;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21.79px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.origin {
+  display: inline-flex;
+  color: white;
+  font-family: 'Ubuntu';
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 22.98px;
+  justify-content: center;
+  align-items: center;
+}

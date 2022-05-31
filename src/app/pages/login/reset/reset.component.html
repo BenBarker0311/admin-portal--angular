@@ -1,0 +1,35 @@
+<div class="main-wrapper bg-auth">
+  <!-- <img src = "assets/images/auth_back.png"> -->
+  <div class="d-flex justify-content-center logo">
+    <app-logo></app-logo>
+  </div>
+  <div class="d-flex justify-content-center">
+    <form class="auth-form login-form" [formGroup]="form" (ngSubmit)="disableFirst() && form.valid && onReset()">
+      <mat-card class="box card-main">
+        <div class="card-title d-flex justify-content-start">Reset Passsword</div>
+        <mat-card-content>
+          <div class="card-content">
+            Enter a new password for your account below.
+          </div>
+          <label class="card-label"> New Password</label>
+          <input type="password" class="form-control" formControlName="password" [(ngModel)]="password"
+            placeholder="Min 8 characters">
+          <mat-error *ngIf="!isFirst && form.controls['password'].hasError('required')" class="form-control-feedback">
+            Password is required.
+          </mat-error>
+          <mat-error *ngIf="!isFirst && form.controls['password'].hasError('minlength')" class="form-control-feedback">
+            Min length of Password is 8.
+          </mat-error>
+          <div class="flex-container-hcenter">
+            <button class="_btn-primary full-width">Reset Password</button>
+          </div>
+          <div class="flex-container-hcenter">
+            <a [routerLink]="[logInRoute]" class="_link-primary">Cancel</a>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

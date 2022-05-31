@@ -1,0 +1,33 @@
+<div class="main-wrapper bg-auth">
+  <div class="d-flex justify-content-center logo">
+    <app-logo></app-logo>
+  </div>
+  <div class="d-flex sign-up justify-content-center">
+    <mat-card class="box auth-form card-main">
+      <div>
+        <div class="col-12">
+          <div class="d-flex justify-content-center">
+            <span class="card-icon d-flex justify-content-center align-items-center">
+              <mat-icon>close</mat-icon>
+            </span>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="card-title">Invalid link</div>
+          </div>
+        </div>
+      </div>
+      <mat-card-content>
+        <div class="card-content d-flex justify-content-center">
+          Failed to finalize your registeration.<br><br>
+          Try copying the link from the email and pasting it<br>
+          directly in to the address bar of your browser.
+        </div>
+        <div class="card-content d-flex justify-content-center">
+          <a [routerLink]="[logInRoute]" class="_link-primary">Back to Login</a>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

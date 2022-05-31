@@ -1,0 +1,54 @@
+<div class="main-wrapper bg-auth">
+  <div class="d-flex justify-content-center logo">
+    <app-logo></app-logo>
+  </div>
+  <div class="d-flex sign-up justify-content-center">
+    <mat-card class="box auth-form card-main">
+      <div class="col-12">
+        <div class="d-flex justify-content-center">
+          <div>
+            <span class="number-circle active d-flex justify-content-center align-items-center">
+              <mat-icon>done</mat-icon>
+            </span>
+          </div>
+          <div class="d-flex align-items-center flex-fill">
+            <span layout="row">
+              <hr class="horizontal-line active" size="2" flex />
+            </span>
+          </div>
+          <div>
+            <span class="number-circle active d-flex justify-content-center align-items-center">
+              <mat-icon>done</mat-icon>
+            </span>
+          </div>
+          <div class="d-flex align-items-center flex-fill">
+            <span layout="row">
+              <hr class="horizontal-line active" size="2" flex />
+            </span>
+          </div>
+          <div>
+            <span class="number-circle active d-flex justify-content-center align-items-center">
+              <mat-icon>done</mat-icon>
+            </span>
+          </div>
+        </div>
+        <div class="d-flex justify-content-start">
+          <div class="card-title">Confirm your email address</div>
+        </div>
+      </div>
+      <mat-card-content>
+        <div class="card-content d-flex justify-content-center">
+          We’ve sent you a link to confirm your email address. Open the link in the email to complete the registration
+          of your account.<br><br>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna.
+        </div>
+        <div class="card-content d-flex justify-content-center">
+          <a [routerLink]="[logInRoute]" class="_link-primary">Back to Log in</a>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

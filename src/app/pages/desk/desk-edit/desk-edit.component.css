@@ -1,0 +1,12 @@
+.desks {
+  background-color:  #E5E5E5;
+  width: 100%;
+  min-height: 100%;
+  padding: 30px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 41.36px;
+}
